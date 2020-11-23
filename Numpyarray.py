@@ -77,14 +77,24 @@ a = np.array([[1, 2], [3, 4], [5, 6]])
 b = a[[0, 1, 2], [0, 1, 0]]
 print(b)
 
+print('\n')
 x = np.array([[  0,  1,  2],[  3,  4,  5],[  6,  7,  8],[  9,  10,  11]])  
 print ('我们的数组是：' )
 print (x)
 print ('\n')
+
 rows = np.array([[0,0],[3,3]]) 
-print(rows)
 cols = np.array([[0,2],[0,2]]) 
-print(cols)
 y = x[rows,cols]  
 print  ('这个数组的四个角元素是：')
 print (y)
+
+a = np.arange(6).reshape(2,3)
+print(a.T)
+for x in np.nditer(a.T):
+    print (x, end=", " )
+print ('\n')
+ 
+for x in np.nditer(a.T.copy(order='C')):
+    print (x, end=", " )
+print ('\n')
