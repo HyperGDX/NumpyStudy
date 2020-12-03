@@ -1,16 +1,26 @@
-import random
+import numpy as np
+import matplotlib 
 
-# 生成呈正态分布的随机数
-# print("normalvariate: ", random.normalvariate(0, 1))
+a = [3, 2, 1, 2, 3, 4, 5, 1, 2, 4, 5, 1, 2, 3, 2, 1]
+b = a[:]
+a = list(set(a))
+print(a)
+a = np.unique(a)
+print(a, type(a))
 
-# 产生一组满足正太分布的随机数
-walk = []
-for _ in range(1000):
-    walk.append(random.normalvariate(0, 1))
+print(np.bincount(b))
 
-# 画成直方图
-import matplotlib.pyplot as plt  # 导入模块
 
-plt.hist(walk, bins=30)  # bins直方图的柱数
-plt.show()
-print(walk)
+a = np.array([1.0, 0, -2, 1])
+p = np.poly1d(a)
+print(a)
+print('--------------------------')
+
+a1 = p.deriv()
+print(a1)
+print(a1.c)     #系数
+print(a1.order) #最高项次方数
+print(a1.coef)  #拿系数
+print('--------------------------')
+a2 = p.integ()
+print(a2)
